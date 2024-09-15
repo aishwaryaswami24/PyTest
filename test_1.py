@@ -33,3 +33,12 @@ def test_parameterize(username,password):
 def test_xfail():
     assert True
     print('xfail test cases')
+
+@pytest.fixture
+def test_setup():
+    print('start browser')
+    yield
+    print('close browser')
+
+def test_fixture1(test_setup):
+    print('started using fixture')
