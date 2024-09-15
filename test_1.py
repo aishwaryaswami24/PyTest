@@ -1,4 +1,5 @@
 import pytest
+import sys
 
 
 @pytest.mark.smoke
@@ -14,7 +15,7 @@ def test_skip():
     print('skip test cases')
 
 
-@pytest.mark.skipif(reason='Test case is not yet ready')
+@pytest.mark.skipif(sys=sys.version_info<(3,8),reason='Test case is not yet ready')
 def test_skipif():
     print('skipif test cases ')
 
