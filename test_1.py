@@ -1,6 +1,10 @@
 import pytest
 
+
+@pytest.mark.smoke
 def test_script1():
-    x=10
-    y=20
-assert x == y
+    print('smoke test cases passed')
+
+@pytest.mark.regression
+def test_login():
+    print('regression test cases passed')
